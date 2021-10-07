@@ -1,0 +1,70 @@
+Set A 
+
+
+SOLUTION: 
+
+1. Creating a Database CREATE DATABASE Company;
+
+
+ 
+2. Creating Tables (With and Without Constraints) 
+CREATE TABLE DEPARTMENT 
+DNUMBER VARCHAR2 (20) PRIMARY KEY, DNAME VARCHAR2 (20), 
+MGRSTARTDATE DATE); 
+CREATE TABLE EMPLOYEE (SSN VARCHAR2 (20) PRIMARY KEY, FNAME VARCHAR2 (20),
+ LNAME VARCHAR2 (20), ADDRESS VARCHAR2 (20), SEX CHAR (1), SALARY INTEGER,
+ SUPERSSN REFERENCES EMPLOYEE (SSN), DNO REFERENCES DEPARTMENT (DNO)); 
+
+
+NOTE: Once DEPARTMENT and EMPLOYEE tables are created we must alter department table to add foreign constraint MGRSSN using sql command 
+ALTER TABLE DEPARTMENT ADD MGRSSN REFERENCES EMPLOYEE (SSN); 
+
+
+3. Inserting/Updating/Deleting Records in a Table, 
+INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES (_RNSECE01',..JOHN.,`SCOTT.,`BANGALOREVM., 450000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSCSEO I VJAMES`,.SMITHVBANGALOREVM., 500000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSCSE02.,`HEARNVBAKERVBANGALOREVM., 700000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSCSE03.,'EDWARDVSCOTT,`MYSOREVM., 500000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LANSCSE04.,`PAVANVHEGDE.,`MANGALOREVM., 650000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSCSE05.,`GIRISHVMALYA.,`MYSOREVM., 450000); 
+INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSCSE06.,`NEHAVSN.,`BANGAIAREVF., 800000); 
+INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSACCOI VAHANAVIC,`MANGALORE.,`F`, 350000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSACCO2.,`SANTHOSHVKUMAR`,`MANGALOREVM., 300000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSISE01`,.VEENAVM.,`MYSOREVM., 600000);
+ INSERT INTO EMPLOYEE (SSN, FNAME, LNAME, ADDRESS, SEX, SALARY) VALUES LRNSITOI `,`NAGESH.,`HR.,`BANGALOREVM., 500000); 
+INSERT INTO DEPARTMENT VALUES LI `,`ACCOUNTSVOI-JAN01`,.RNSACCO2.); 
+INSERT INTO DEPARTMENT VALUES L2VITVOI-AUG-16.,`RNSITO I `); 
+INSERT INTO DEPARTMENT VALUES L3VECE`,.01 -JUN-08.,`RNSECE0 I `);
+ INSERT INTO DEPARTMENT VALUES L4VISE.,`01-AUG-15`,.RNSISE0 I.);
+ INSERT INTO DEPARTMENT VALUES L5`,`CSEVOI-JUN-02`,.RNSCSE05.); 
+
+
+4. Update 
+UPDATE DEPARTMENT SET DNAME=" WHERE SSN=.11NSCSE05'; 
+
+5. Delete entries of department with department number =1 DELETE FROM DEPARTMENT WHERE DNUMBER=I; 
+
+6 :COMMIT and ROLLBACK Jcluding this section on Data Manipulation Language commands there are two further commands, which are very useful. Changes made to the database by INSERT, UPDATE and DELETE commands are temporary until explicitly committed. This is performed by the command: 
+COMMIT; 
+On execution of this command all changes to the database made by you are made permanent and cannot be undone. • A COMMIT is automatically executed when you exit normally from SQL"Plus. However, it does no harm to occasionally issue a COMMIT command. A COMMIT does not apply to any SELECT commands as there is nothing to commit. A COMMIT does not apply to any DDL commands (eg CREATE TABLE, CREATE INDEX, etc). These are automatically committed and cannot be rolled back. If you wished to rollback (ie undo) any changes made to the database since the last commit, you can issue the command: 
+ROLLBACK; 
+A group of related SQL commands that all have to complete successfully or otherwise be rolled back, is called a transaction. Part of your research for Outcome 3 includes investigating transaction processing and the implications of rollback and commit. 7. List all DDL and DML statements: List of DDL commands: 
+CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers). DROP: This command is used to delete objects from the database. ALTER: This is used to alter the structure of the database. 
+TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed. COMMENT: This is used to add comments to the data dictionary. RENAME: This is used to rename an object existing in the database. 
+List of DML commands: 
+INSERT : It is used to insert data into a table. UPDATE: It is used to update existing data within a table. DELETE It is used to delete records from a database table. 
+
+
+
+
+Set B Solution:
+1. Create the company Database: HRMIS a. CREATE DATABASE HRMIS 
+2. Creating Table a. CREATE TABLE EMPLOYEE (EMPNO VARCHAR2 (20) PRIMARY KEY, EMP_NAME VARCHAR2 (20), DEPRT VARCHAR2 (20), SALARY VARCHAR2 (20), DOJ DATE BRANCH varchar2(20) 
+3. Prepare the Insert Statements for the tables for the given records INSERT INTO EMPLOYEE (EMPNO, EMP_NAME,DEPT,SALARY,DOJ,BRANCH) VALUES('E101 VAmit MantriVProductionV45000V12 Mar,2000VBagbazar') Similar do others 
+4. Display all the fields of employee table SELECT a from employee; 
+5.Retrieve employee number and their salary Select empno, salary from employee; 
+6. Retrieve average salary of all employee SQL> select avg(salary) from employee; 
+7. Retrieve number of employee SQL> select count(*) from employee; 
+8. Retrieve distinct name of employee SQL> select distinct emp_name from employee;
+9. Explain on Commit and Rollback statements. Same as Set A 10 List the DML and DDL commands with short example Same as Set A 
+
